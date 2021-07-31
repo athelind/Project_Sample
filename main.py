@@ -21,25 +21,30 @@ dataFrame = dataFrame.replace([" na "], [0])
 countryList = ["Brunei Darussalam","Indonesia","Malaysia","Philippines","Thailand","Viet Nam","Myanmar","Japan","Hong Kong","China","Taiwan","Korea, Republic Of","India","Pakistan","Sri Lanka"]
 
 for year in range(2017):
-    plt.title("Visitors in " + str(year))
-    plt.xlabel("Year")
-    plt.ylabel("Country")
-
     if year > 1977 and year < 1988:
     #if year == 1978:
         targetRows = dataFrame[dataFrame["Year"].str.contains(str(year))]
 
         for country in countryList:
-            plt.plot(targetRows["Year"], targetRows[country], label=country)
+            if country == "Japan":
+                plt.plot(targetRows["Year"], targetRows[country], label=country, marker="x")
+            else:
+                plt.plot(targetRows["Year"], targetRows[country], label=country)
 
         print(targetRows)
+
+        plt.title("Visitors in " + str(year))
+        plt.xlabel("Year")
+        plt.ylabel("Country")
+        plt.style.use("dark_background")
         plt.legend()
         plt.show()
 
+for jyear in range(2017):
+    if jyear > 1977 and jyear < 1988:
+        # if year == 1978:
 
+        targetRows = dataFrame[dataFrame["Year"].str.contains(str(jyear))]
+        targetRows = targetRows[["Japan"]]
 
-
-
-
-
-
+        print(targetRows)
