@@ -18,7 +18,6 @@ dataFrame = xls.parse(0, usecols=[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15],
 #print(dataFrame["Year"])
 
 dataFrame = dataFrame.replace([" na "], [0])
-
 countryList = ["Brunei Darussalam","Indonesia","Malaysia","Philippines","Thailand","Viet Nam","Myanmar","Japan","Hong Kong","China","Taiwan","Korea, Republic Of","India","Pakistan","Sri Lanka"]
 
 for year in range(2017):
