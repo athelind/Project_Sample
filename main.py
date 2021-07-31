@@ -29,10 +29,10 @@ for year in range(2017):
     #if year == 1978:
         targetRows = dataFrame[dataFrame["Year"].str.contains(str(year))]
 
-        print(targetRows)
         for country in countryList:
             plt.plot(targetRows["Year"], targetRows[country], label=country)
 
+        print(targetRows)
         plt.legend()
         plt.show()
 
